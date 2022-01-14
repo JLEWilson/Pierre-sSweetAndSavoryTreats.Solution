@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Flavor
+
+<h1>Edit flavor: </h1>
+<h2>Flavor to edit: @Html.DisplayFor(model => model.Name)</h2>
+<h3>
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.FlavorId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name,
+  new {required="required"})
+
+  <input type="submit" value="Submit Edit" class="btn btn-lg btn-dark"/>
+}
+</h3>
+<div class="inks">
+  <h4>@Html.ActionLink("Delete This Flavor", "Delete", new { id = Model.FlavorId })</h4>
+  <h4>@Html.ActionLink("Back to Flavor Details", "Details", new { id = Model.FlavorId })</h4>
+</div>
