@@ -3,16 +3,23 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using PierresTreats.Models;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
+using System.Security.Claims;
 using System.Linq;
 
 namespace PierresTreats.Controllers 
 {
+  [Authorize]
   public class TreatsController : Controller
   {
     public readonly PierresTreatsContext _db;
-    public TreatsController(PierresTreatsContext db)
+    private readonly UserManager<ApplicationUser> _userManager;
+    public TreatsController(UserManager<ApplicationUser> userManager, PierresTreatsContext db)
     {
       _db = db;
+      _userManager = userManager;
     }
 
     public ActionResult Index()
@@ -30,6 +37,7 @@ namespace PierresTreats.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       var thisTreat = _db.Treats
