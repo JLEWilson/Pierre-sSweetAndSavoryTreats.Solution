@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using PierresTreats.Models;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
@@ -22,17 +21,23 @@ namespace PierresTreats.Controllers
       _userManager = userManager;
     }
 
-    public ActionResult Index()
+    public async Task<ActionResult> Index()
     {
-      return View(_db.Treats.ToList());
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      var userTreats = _db.Treats.Where(entry => entry.User.Id == currentUser.Id).ToList();
+      return View(userTreats);
     }
     public ActionResult Create()
     {
       return View();
     }
     [HttpPost]
-    public ActionResult Create(Treat treat)
+    public async Task<ActionResult> Create(Treat treat)
     {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      treat.User = currentUser;
       _db.Treats.Add(treat);
       _db.SaveChanges();
       return RedirectToAction("Index");

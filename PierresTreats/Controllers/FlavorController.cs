@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 using System.Security.Claims;
 using System.Linq;
-using System;
 
 namespace PierresTreats.Controllers 
 {
@@ -26,7 +25,6 @@ namespace PierresTreats.Controllers
     {
       var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-      Console.WriteLine(userId);
       var userFlavors = _db.Flavors.Where(entry => entry.User.Id == currentUser.Id).ToList();
       return View(userFlavors);
     }
