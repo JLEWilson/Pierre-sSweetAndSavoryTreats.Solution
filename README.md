@@ -22,7 +22,7 @@ _An mvc application that allows the user to facilitate treat/flavor. This projec
 
 ## Setup/Installation Requirements
 
-* _You can find the github repository [here](https://github.com/JLEWilson/DrSillyStringz-sFactory.Solution/tree/main/Factory/Controllers)_
+* _You can find the github repository [here](https://github.com/JLEWilson/Pierre-sSweetAndSavoryTreats.Solution)_
 * _Click the code button, and copy the https link_
 * _In your in git bash or your preferred git terminal navigate to the directory you would like to store the project_
 * _Enter: "git clone" followed by the https link_
@@ -50,4 +50,4 @@ _An mvc application that allows the user to facilitate treat/flavor. This projec
 
 _If you run into any problems or find a bug, would like to reach me for a separate reason, feel free to send me an email @jacobleeeugenewilson@gmail.com with details of your issue._
 
-Copyright (c) _01/07/2022_ _Jacob Wilson_
+Copyright (c) _01/14/2022_ _Jacob Wilson_
