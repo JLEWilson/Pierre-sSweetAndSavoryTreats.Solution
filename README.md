@@ -2,7 +2,7 @@
 
 #### By _**Jacob Wilson**_
 
-#### _An mvc application that allows logged in users to facilitate treat/flavor relations. Non logged in users can only view_
+#### _An mvc application that allows logged in users to facilitate treat/flavor relations. Non logged in users can only view details while logged in users can create, edit, and delete relationships._
 
 ## Technologies Used
 
@@ -18,7 +18,7 @@
 
 ## Description
 
-_An mvc application that allows the user to facilitate treat/flavor. This project emphasizes practicing many to many relationships. The user is able to create a flavor object that can can be repaired by any number of treats that are licensed, a treat object that can become licensed to be able to repair any number of flavors. The project contains a plash page that lists all created objects as well as a navigation bar that can direct you either to both a flavors list a treats list, or to an account management page._
+_An mvc application that allows the user to facilitate treat/flavor relations. This project emphasizes practicing many to many relationships and authentication with Entity. The user is able to create a flavor object that can can be assigned to any number of treats or a treat object that be assigned any number of flavors. The project contains a splash page that lists all created objects as well as a navigation bar that can direct you either to both a flavors list a treats list, or to an account management page. The edit, create, and post views are only available to those who have logged in while the details view is available for all._
 
 ## Setup/Installation Requirements
 
