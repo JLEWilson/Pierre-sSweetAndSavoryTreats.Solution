@@ -27,7 +27,7 @@ _An mvc application that allows the user to facilitate treat/flavor relations. T
 * _In your in git bash or your preferred git terminal navigate to the directory you would like to store the project_
 * _Enter: "git clone" followed by the https link_
 * _Now that the repository is cloned to your computer, right click on the folder and click open with vs code_
-* _Once in the project navigate to the UniversityRegistrar directory_
+* _Once in the project navigate to the PierresTreats directory_
 * _Type dotnet restore to install dependencies_
 * _In order to initialize a database you will need to create an appsettings.json file that looks like this_
 ```
